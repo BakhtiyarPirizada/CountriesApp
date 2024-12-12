@@ -22,7 +22,7 @@ final class ReusableButton: UIButton {
         setTitle(title, for: .normal)
         titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         titleLabel?.textColor = .white
-        backgroundColor = .red
+        backgroundColor = .botton
         addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         layer.cornerRadius = 12
     }

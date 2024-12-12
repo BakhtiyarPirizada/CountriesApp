@@ -33,6 +33,12 @@
 		7FAE020A2D0AE758007F505F /* CoreAPIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAE02092D0AE74D007F505F /* CoreAPIHelper.swift */; };
 		7FAE020C2D0AE774007F505F /* CoreErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAE020B2D0AE769007F505F /* CoreErrorModel.swift */; };
 		7FAE02102D0AE879007F505F /* LayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAE020F2D0AE86C007F505F /* LayoutExtension.swift */; };
+		7FAE02122D0B0B5A007F505F /* testFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FAE02112D0B0B5A007F505F /* testFont.otf */; };
+		7FAE02142D0B1140007F505F /* Downtown.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FAE02132D0B1140007F505F /* Downtown.otf */; };
+		7FAE02172D0B13FC007F505F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FAE02162D0B13FC007F505F /* Colors.xcassets */; };
+		7FAE02192D0B149C007F505F /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAE02182D0B149C007F505F /* CoreViewController.swift */; };
+		7FAE021D2D0B231E007F505F /* SortController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAE021C2D0B231E007F505F /* SortController.swift */; };
+		7FAE02222D0B4DEB007F505F /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAE02212D0B4DEB007F505F /* MapController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +72,12 @@
 		7FAE02092D0AE74D007F505F /* CoreAPIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAPIHelper.swift; sourceTree = "<group>"; };
 		7FAE020B2D0AE769007F505F /* CoreErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreErrorModel.swift; sourceTree = "<group>"; };
 		7FAE020F2D0AE86C007F505F /* LayoutExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutExtension.swift; sourceTree = "<group>"; };
+		7FAE02112D0B0B5A007F505F /* testFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = testFont.otf; sourceTree = "<group>"; };
+		7FAE02132D0B1140007F505F /* Downtown.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Downtown.otf; sourceTree = "<group>"; };
+		7FAE02162D0B13FC007F505F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		7FAE02182D0B149C007F505F /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
+		7FAE021C2D0B231E007F505F /* SortController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortController.swift; sourceTree = "<group>"; };
+		7FAE02212D0B4DEB007F505F /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +133,9 @@
 		7F6185502D08B11E00130962 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7FAE02152D0B118E007F505F /* Fonts */,
 				7F6185442D08B11400130962 /* Assets.xcassets */,
+				7FAE02162D0B13FC007F505F /* Colors.xcassets */,
 				7F6185472D08B11400130962 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -141,6 +155,7 @@
 		7FAE01C12D08B520007F505F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7FAE021A2D0B14A4007F505F /* Controllers */,
 				7FAE01C02D08B520007F505F /* ReusableElements */,
 			);
 			path = Core;
@@ -292,6 +307,8 @@
 			children = (
 				7FAE01C42D08B520007F505F /* TabBar */,
 				7FAE01CD2D08B520007F505F /* HomeController */,
+				7FAE021B2D0B2302007F505F /* SortController */,
+				7FAE02202D0B4DD0007F505F /* MapController */,
 				7FAE01D32D08B520007F505F /* QuizController */,
 				7FAE01D82D08B520007F505F /* LogOutController */,
 				7FAE01DD2D08B520007F505F /* DetailsController */,
@@ -354,6 +371,39 @@
 				7FAE02032D0AE65D007F505F /* CountriesAPIService.swift */,
 			);
 			path = CountriesAPI;
+			sourceTree = "<group>";
+		};
+		7FAE02152D0B118E007F505F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7FAE02112D0B0B5A007F505F /* testFont.otf */,
+				7FAE02132D0B1140007F505F /* Downtown.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7FAE021A2D0B14A4007F505F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7FAE02182D0B149C007F505F /* CoreViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7FAE021B2D0B2302007F505F /* SortController */ = {
+			isa = PBXGroup;
+			children = (
+				7FAE021C2D0B231E007F505F /* SortController.swift */,
+			);
+			path = SortController;
+			sourceTree = "<group>";
+		};
+		7FAE02202D0B4DD0007F505F /* MapController */ = {
+			isa = PBXGroup;
+			children = (
+				7FAE02212D0B4DEB007F505F /* MapController.swift */,
+			);
+			path = MapController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,8 +471,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FAE02172D0B13FC007F505F /* Colors.xcassets in Resources */,
 				7F61854D2D08B11400130962 /* Assets.xcassets in Resources */,
+				7FAE02122D0B0B5A007F505F /* testFont.otf in Resources */,
 				7F61854F2D08B11400130962 /* LaunchScreen.storyboard in Resources */,
+				7FAE02142D0B1140007F505F /* Downtown.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,8 +497,10 @@
 				7FAE01E52D08B520007F505F /* QuizController.swift in Sources */,
 				7FAE01E62D08B520007F505F /* ReusableImage.swift in Sources */,
 				7FAE01E92D08B520007F505F /* QuizViewModule.swift in Sources */,
+				7FAE02192D0B149C007F505F /* CoreViewController.swift in Sources */,
 				7FAE02042D0AE66A007F505F /* CountriesAPIService.swift in Sources */,
 				7FAE02062D0AE6AC007F505F /* CountriesHelper.swift in Sources */,
+				7FAE02222D0B4DEB007F505F /* MapController.swift in Sources */,
 				7FAE01EA2D08B520007F505F /* DetailsController.swift in Sources */,
 				7FAE01EB2D08B520007F505F /* HomeController.swift in Sources */,
 				7FAE01FE2D0AE540007F505F /* Extension.swift in Sources */,
@@ -455,6 +510,7 @@
 				7FAE01EE2D08B520007F505F /* ReusableText.swift in Sources */,
 				7FAE01F82D08B6A7007F505F /* HomeViewModel.swift in Sources */,
 				7FAE01A12D08B473007F505F /* TabBarController.swift in Sources */,
+				7FAE021D2D0B231E007F505F /* SortController.swift in Sources */,
 				7F61854B2D08B11400130962 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

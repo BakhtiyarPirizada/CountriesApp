@@ -40,13 +40,29 @@ final class HomeViewModel {
     func getItems() -> Int {
         searchedList?.count ?? 0
     }
-    func sortAtoZ(text:String) {
+    func searcText(text:String) {
         if text.isEmpty {
             searchedList = list
         } else {
             searchedList = list?.filter({ $0.title.lowercased().contains(text.lowercased())})
             listener?(.success)
         }
+    }
+    func sortAZ() {
+        searchedList = list?.sorted(by: {$0.title > $1.title})
+        listener?(.success)
+    }
+    func sortZA() {
+        searchedList = list?.sorted(by: {$0.title < $1.title})
+        listener?(.success)
+    }
+    func sortGL() {
+        searchedList = list?.sorted(by: {$0.area > $1.area})
+        listener?(.success)
+    }
+    func sortLG() {
+        searchedList = list?.sorted(by: {$0.area < $1.area})
+        listener?(.success)
     }
     
 }

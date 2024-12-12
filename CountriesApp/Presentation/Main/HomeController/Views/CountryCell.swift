@@ -25,6 +25,15 @@ final class CountryCell: UITableViewCell {
     
     private lazy var flagImage = ReusableImage(img:  .actions)
     
+    private lazy var view: UIView = {
+        let v = UIView()
+        v.layer.borderWidth = 1
+        v.layer.borderColor = UIColor.lightGray.cgColor
+        v.layer.cornerRadius = 8
+        v.backgroundColor = .tabBar
+        return v
+    }()
+    
     private lazy var titleStackView: UIStackView = {
         let s = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
         s.axis = .vertical
@@ -44,14 +53,24 @@ final class CountryCell: UITableViewCell {
     }()
    
     func configureConstraints() {
+        view.anchor(
+            top: topAnchor,
+            leading: leadingAnchor,
+            bottom: bottomAnchor,
+            trailing: trailingAnchor,
+            padding: .init(top: 2, left: 0, bottom: -2, right: 0)
+        )
         flagImage.anchorSize(.init(width: 40, height: 40))
         flagImage.layer.cornerRadius = 20
-        stackView.fillSuperview(padding: .init(top: 12, left: 0, bottom: -12, right: 0))
-        addSubview(stackView)
+        stackView.fillSuperview()
+        
 
     }
     fileprivate func configureUI() {
-
+        backgroundColor = .clear
+        view.addSubview(stackView)
+        addSubview(view)
+        
     }
     func configureCell(model:TitleSubtitleProtocol) {
         titleLabel.text = model.title

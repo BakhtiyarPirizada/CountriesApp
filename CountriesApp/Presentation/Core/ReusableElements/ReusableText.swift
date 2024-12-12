@@ -17,11 +17,12 @@ final class ReusableText: UITextField, UITextFieldDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     func configureUI() {
-       borderStyle = .roundedRect
+       backgroundColor = .tabBar
        layer.borderWidth = 1.0
        layer.borderColor = UIColor.lightGray.cgColor
        placeholder = title
        textColor = .black
+       borderStyle = .roundedRect
        delegate = self
        layer.cornerRadius = 12
     }
