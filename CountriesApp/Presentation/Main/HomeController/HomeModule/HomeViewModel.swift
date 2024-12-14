@@ -49,11 +49,11 @@ final class HomeViewModel {
         }
     }
     func sortAZ() {
-        searchedList = list?.sorted(by: {$0.title > $1.title})
+        searchedList = list?.sorted(by: {$0.title < $1.title})
         listener?(.success)
     }
     func sortZA() {
-        searchedList = list?.sorted(by: {$0.title < $1.title})
+        searchedList = list?.sorted(by: {$0.title > $1.title})
         listener?(.success)
     }
     func sortGL() {

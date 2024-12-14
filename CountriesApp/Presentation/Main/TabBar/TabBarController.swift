@@ -12,8 +12,8 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBar()
-
     }
+    
     private func configureTabBar() {
         let firstController = HomeController(viewModule: HomeViewModel())
         let secondController = QuizController()

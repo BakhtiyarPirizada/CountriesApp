@@ -9,7 +9,7 @@ import UIKit
 
 
 class SortController: UIViewController {
-
+    
     enum SortType {
         case AZ
         case ZA
@@ -22,7 +22,7 @@ class SortController: UIViewController {
     private lazy var sortAlphabetZA = ReusableLabel(title: "Sort countries Z to A", size: 16)
     private lazy var sortAreaLG = ReusableLabel(title: "Sort countries Little to Great", size: 16)
     private lazy var sortArray = [sortAlphabetAZ,sortAlphabetZA,sortAreaGL,sortAreaLG]
-   
+    
     private lazy var stackView: UIStackView = {
         let s = UIStackView(arrangedSubviews: [sortAlphabetAZ, sortAlphabetZA,sortAreaGL,sortAreaLG])
         s.axis = .vertical
@@ -43,6 +43,7 @@ class SortController: UIViewController {
         configureLabel()
         configureConstraints()
     }
+    
     fileprivate func configureConstraints() {
         stackView.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
@@ -51,6 +52,7 @@ class SortController: UIViewController {
             padding: .init(top: 24, left: 20, bottom: 0, right: -20)
         )
     }
+    
     fileprivate func configureLabel() {
         sortArray.forEach{$0.backgroundColor = .BG}
         sortArray.forEach{$0.anchorSize(.init(width: 0, height: 48))}
@@ -87,7 +89,7 @@ class SortController: UIViewController {
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        <#code#>
 //    }
-//    
+//
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        <#code#>
 //    }

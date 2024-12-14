@@ -64,14 +64,14 @@ class HomeController: CoreViewController {
         r.addTarget(self, action: #selector(reloadPage), for: .valueChanged)
         return r
     }()
-     
-//MARK: Override Functions
+    
+    //MARK: Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewModule()
         viewModule.countryListRequest()
     }
-//MARK: Fileprivate Functions
+    //MARK: Fileprivate Functions
     override func configureUI(){
         super.configureUI()
         view.addViews(view: [countryTable,searchField,loadingView,sortButton,refreshButton,sortLabel])
@@ -92,14 +92,14 @@ class HomeController: CoreViewController {
             trailing: view.safeAreaLayoutGuide.trailingAnchor,
             padding: .init(top: 6, left: 20, bottom: 0, right: -20)
         )
-       
+        
         searchField.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             leading: view.leadingAnchor,
             trailing: view.trailingAnchor,
             padding: .init(top: 0, left: 20, bottom: 0, right: -20)
         )
-     
+        
         sortButton.anchor(
             top: searchField.bottomAnchor,
             bottom: countryTable.topAnchor,
@@ -133,27 +133,27 @@ class HomeController: CoreViewController {
             guard let self = self else {return}
             DispatchQueue.main.async {
                 switch state {
-                    case .loading:
-                        self.loadingView.startAnimating()
-                    case .loaded:
-                        self.loadingView.stopAnimating()
+                case .loading:
+                    self.loadingView.startAnimating()
+                case .loaded:
+                    self.loadingView.stopAnimating()
                     self.refreshController.endRefreshing()
-                    case .success:
+                case .success:
                     self.countryTable.reloadData()
-                    case .error(let message):
-                        self.showMessage(title: "Error", message: message)
+                case .error(let message):
+                    self.showMessage(title: "Error", message: message)
                 }
             }
         }
     }
-//MARK: @OBJC Functions
+    //MARK: @OBJC Functions
     
     @objc private func buttonClicked() {
         let controller = SortController()
         controller.modalPresentationStyle = .pageSheet
         if let sheet = controller.sheetPresentationController {
-        sheet.detents = [.medium(),.large()]
-        sheet.prefersGrabberVisible = true }
+            sheet.detents = [.medium(),.large()]
+            sheet.prefersGrabberVisible = true }
         present(controller, animated: true)
         
         controller.callback = {[weak self] sortType in
@@ -191,12 +191,11 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = MapController()
-//        controller.modalPresentationStyle = .pageSheet
-//        if let sheet = controller.sheetPresentationController {
-//        sheet.detents = [.medium(),.large()]
-//        sheet.prefersGrabberVisible = true }
-//        present(controller, animated: true)
-        navigationController?.pushViewController(controller, animated: true)
+        controller.modalPresentationStyle = .pageSheet
+        if let sheet = controller.sheetPresentationController {
+            sheet.detents = [.medium(),.large()]
+            sheet.prefersGrabberVisible = true }
+        present(controller, animated: true)
     }
 }
 //MARK: UITextFieldDelegate
@@ -205,6 +204,6 @@ extension HomeController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let text = textField.text else {return}
         viewModule.searcText(text: text)
- 
+        
     }
 }

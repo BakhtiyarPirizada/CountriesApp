@@ -70,8 +70,8 @@ final class CountryCell: UITableViewCell {
         backgroundColor = .clear
         view.addSubview(stackView)
         addSubview(view)
-        
     }
+    
     func configureCell(model:TitleSubtitleProtocol) {
         titleLabel.text = model.title
         subtitleLabel.text = model.subtite
