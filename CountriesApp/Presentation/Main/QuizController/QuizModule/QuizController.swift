@@ -26,6 +26,7 @@ class QuizController: UIViewController {
         
     }
 }
+//
 extension QuizController:UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
